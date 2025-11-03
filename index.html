@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style class="ariareader ariareader--user-agent" media="screen" id="aria7kyjiprebio" data-for="result" isaria="true">
+    .ariafocus {
+      outline: none;
+    }
+
+
+
+    body.useOldFixed [aria-fixedOldHidden="true"],
+    .ariaHide {
+      display: none !important;
+    }
+
+    :focus {
+      outline: none !important;
+    }
+  </style>
+
+  <title>腾讯天气</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+  <!--[if lte IE 7
+      ]><meta
+        http-equiv="refresh"
+        content="0; url=http://sports.qq.com/kbsweb/upgrade.htm"
+    /><![endif]-->
+  <meta name="description" content="腾讯天气" />
+  <meta name="keywords" content="天气 腾讯天气 天气预报 空气质量" />
+  <link rel="shortcut icon" href="./img/favicon2.ico" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery"
+    src="./js/jquery.min.js"></script>
+</head>
+
+<body dt-pgid="pg_weather" dt-parmas="dt_pg_path=[&#39;pg_weather&#39;]" aria-status="false" aria-ofstatus="false"
+  aria-basefontsize="12">
+  <a id="ariaTipText" role="pagedescription"
+    aria-label="欢迎进入 腾讯天气,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。" aria-atomic="true"
+    href="javascript:void(0)" class="skipAutoFix" style="width: 1px; height: 1px"><img src="https://tianqi.qq.com/"
+      style="
+          width: 1px !important;
+          height: 1px !important;
+          position: absolute;
+          top: 0;
+        " /></a>
+  <div data-beacon-expo="qn_elementid=pv&amp;qn_event_type=show">
+    <input id="i-ie-bug" style="
+          position: absolute;
+          height: 1px;
+          border-width: 0px;
+          z-index: 0;
+          width: 1px;
+        " />
+    <div id="ct-header">
+      <div class="container">
+        <img src="./img/0.png" alt="logo" id="logo" />
+        <!-- <h1>摇晃的红酒杯 嘴唇还染着鲜血</h1> -->
+        <div id="ct-location">
+          <a href="https://www.qq.com/" style="color: #fff; margin-right: 20px">腾讯网首页</a>
+          <a href="javascript:void(0)" onclick="window.aria.start()" style="color: #fff; margin-right: 20px">无障碍浏览</a>
+          <div id="ct-show">
+            <p id="txt-cur-location" class="">陕西 宝鸡</p>
+            <div id="ct-attention">
+              <h3 id="titl">关注的城市</h3>
+              <ol id="ls-attention">
+                <div class="ljl">
+                </div>
+                <li class="city" data-province="山东省" data-city="济南市" data-district="">
+                  <div class="ct-location">
+                    <p class="location">济南市</p>
+                    <p class="mark">默认</p> <a href="javascript:;" class="btn btn-cancel">取消默认</a>
+                  </div> <img class="icon" src="./腾讯天气_files/02.png" alt="阴" title="阴">
+                  <p class="weather">阴</p>
+                  <p class="temperature">23°/32°</p>
+                  <a href="javascript:;" class="btn btn-delete"></a>
+                </li>
+                <li class="city" data-province="上海" data-city="上海" data-district="">
+                  <div class="ct-location">
+                    <p class="location">上海</p>
+                    <a href="javascript:;" class="btn btn-set-default">设为默认</a>
+                  </div> <img class="icon" src="./腾讯天气_files/09.png" alt="大雨" title="大雨">
+                  <p class="weather">大雨转小雨</p>
+                  <p class="temperature">26°/32°</p> <a href="javascript:;" class="btn btn-delete"></a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <a href="javascript:;" id="btn-attention" style="display: inline-block">[添加关注]</a>
+          <p id="tips-attention-size" style="display: none">
+            最多只能添加5个城市
+          </p>
+          <div id="ct-search">
+            <input type="input" id="i-location" placeholder="搜索市、区、县等" />
+            <ul id="ls-match">
+              <li class="item" data-province="天津” data-city=" 天津” data-district="北辰">天津 北辰”</li>
+            </ul>
+            <div id="ct-hot-city">
+              <p class="tit" id="tit-cur" style="margin-bottom: 12px; display: block">
+                当前定位
+              </p>
+              <p id="cur-location" class="match" data-province="山东省" data-city="济南市" data-district=""
+                style="display: block">
+                济南市
+              </p>
+              <div id="ct-history">
+                <p class="tit">历史记录</p>
+                <a id="btn-clean">清除</a>
+                <ul class="ls-city" id="ls-history">
+                </ul>
+              </div>
+              <p class="tit">热门城市</p>
+              <ul id="ls-hot-city" class="ls-city">
+                <li class="opts" data-province="北京" data-city="北京">
+                  <span>北京</span>
+                </li>
+                <li class="opts" data-province="上海" data-city="上海">
+                  <span>上海</span>
+                </li>
+                <li class="opts" data-province="广东" data-city="广州">
+                  <span>广州</span>
+                </li>
+                <li class="opts" data-province="广东" data-city="深圳">
+                  <span>深圳</span>
+                </li>
+                <li class="opts" data-province="天津" data-city="天津">
+                  <span>天津</span>
+                </li>
+                <li class="opts" data-province="陕西" data-city="西安">
+                  <span>西安</span>
+                </li>
+                <li class="opts" data-province="湖北" data-city="武汉">
+                  <span>武汉</span>
+                </li>
+                <li class="opts" data-province="四川" data-city="成都">
+                  <span>成都</span>
+                </li>
+                <li class="opts" data-province="河北" data-city="石家庄">
+                  <span>石家庄</span>
+                </li>
+                <li class="opts" data-province="河南" data-city="郑州">
+                  <span>郑州</span>
+                </li>
+                <li class="opts" data-province="黑龙江" data-city="哈尔滨">
+                  <span>哈尔滨</span>
+                </li>
+                <li class="opts" data-province="山西" data-city="太原">
+                  <span>太原</span>
+                </li>
+                <li class="opts" data-province="新疆" data-city="乌鲁木齐">
+                  <span>乌鲁木齐</span>
+                </li>
+                <li class="opts" data-province="山东" data-city="济南">
+                  <span>济南</span>
+                </li>
+                <li class="opts" data-province="福建" data-city="福州">
+                  <span>福州</span>
+                </li>
+                <li class="opts" data-province="西藏" data-city="日喀则">
+                  <span>日喀则</span>
+                </li>
+                <li class="opts" data-province="福建" data-city="厦门">
+                  <span>厦门</span>
+                </li>
+                <li class="opts" data-province="山东" data-city="青岛">
+                  <span>青岛</span>
+                </li>
+                <li class="opts" data-province="江苏" data-city="扬州">
+                  <span>扬州</span>
+                </li>
+                <li class="opts" data-province="安徽" data-city="合肥">
+                  <span>合肥</span>
+                </li>
+                <li class="opts" data-province="重庆" data-city="重庆">
+                  <span>重庆</span>
+                </li>
+                <li class="opts" data-province="江西" data-city="南昌">
+                  <span>南昌</span>
+                </li>
+                <li class="opts" data-province="河北" data-city="唐山">
+                  <span>唐山</span>
+                </li>
+                <li class="opts" data-province="浙江" data-city="杭州">
+                  <span>杭州</span>
+                </li>
+                <li class="opts" data-province="河北" data-city="邢台">
+                  <span>邢台</span>
+                </li>
+                <li class="opts" data-province="辽宁" data-city="沈阳">
+                  <span>沈阳</span>
+                </li>
+                <li class="opts" data-province="河北" data-city="邯郸">
+                  <span>邯郸</span>
+                </li>
+                <li class="opts" data-province="云南" data-city="昆明">
+                  <span>昆明</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ct-current">
+      <div class="container">
+        <p id="txt-pub-time">中央气象台21:10发布</p>
+        <div id="ct-main">
+          <p id="txt-temperature">32°</p>
+          <p id="txt-name">晴</p>
+          <div id="ct-aqi" class="air-level1">
+            <p class="info-aqi">38 优</p>
+            <div id="air-window" class="popwindow">
+              <div class="header">空气质量指数 38&nbsp;优</div>
+              <div class="detail">
+                <div class="inner">
+                  <table id="tb-detail">
+                    <tbody>
+                      <tr class="line1">
+                        <td>
+                          <p class="val">16</p>
+                          <p class="titl">PM2.5</p>
+                        </td>
+                        <td class="nth-2">
+                          <p class="val">28</p>
+                          <p class="titl">PM10</p>
+                        </td>
+                        <td>
+                          <p class="val">9</p>
+                          <p class="titl">SO2</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="val">10</p>
+                          <p class="titl">NO2</p>
+                        </td>
+                        <td class="nth-2">
+                          <p class="val">119</p>
+                          <p class="titl">O3</p>
+                        </td>
+                        <td>
+                          <p class="val">0.5</p>
+                          <p class="titl">CO</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul id="ls-warning">
+            <li class="tag level02">
+              高温预警
+              <div class="popwindow warning-window">
+                <div class="header">高温黄色预警</div>
+                <div class="detail">
+                  <div class="inner">
+                    <p>
+                      宝鸡市气象台2025年08月19日14时10分继续发布高温黄色预警信号：预计19日至22日，每日11时至18时，我市历下区、市中区、槐荫区、天桥区、历城区、高新区、南山区和起步区全部街道，最高气温在35℃左右，个别街道在37℃左右。（预警信息来源：国家预警信息发布中心）
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="ct-other">
+          <p class="item">
+            <i class="icon wind-3" id="icon-wind"></i>
+            <span class="txt" id="txt-wind">东南风&nbsp;4-5级</span>
+          </p>
+          <p class="item">
+            <i class="icon" id="icon-humidity"></i>
+            <span class="txt" id="txt-humidity">湿度&nbsp;60%</span>
+          </p>
+          <p class="item">
+            <i class="icon" id="icon-kPa"></i>
+            <span class="txt" id="txt-kPa">气压&nbsp;985hPa</span>
+          </p>
+          <p class="item" id="info-limit">
+            <i class="icon" id="icon-limit"></i>
+            <span class="txt" id="txt-limit"></span>
+          </p>
+        </div>
+        <div id="ct-tips">
+          <p id="txt-tips"></p>
+          <a href="javascript:;" id="btn-tip-switch" style="display: none"></a>
+        </div>
+        <div id="ct-current-weather">
+          <img class="icon" src="./img/day/00.png" />
+        </div>
+      </div>
+    </div>
+    <div class="container" id="ct-hours">
+      <h2 id="title">逐小时预报</h2>
+      <a id="txt-source" href="http://www.weather.com.cn/" target="_blank">数据来源于中国天气网</a>
+      <div id="ct-hour-index" class="ct-page-ctrl">
+        <a href="javascript:;" id="btn-prev" class="btn"></a>
+        <a href="javascript:;" id="btn-next" class="btn"></a>
+      </div>
+      <div id="ct-weather">
+        <ol id="ls-weather-hour" class="ls-weather">
+          <li class="item">
+            <p class="txt-time">20:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">21:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">22:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">23:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">31°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">明天</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">01:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">02:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">03:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">04:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">29°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">05:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">29°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">05:33</p>
+            <img src="./img/rise.png" alt="日出" title="日出" class="icon" />
+            <p class="txt-degree">日出</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">06:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">29°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">07:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">29°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">08:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">30°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">09:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">32°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">10:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">33°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">11:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">12:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">13:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">14:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">15:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">16:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">17:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">35°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">18:00</p>
+            <img src="./img/day/02.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">34°</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">18:57</p>
+            <img src="./img/set.png" alt="日落" title="日落" class="icon" />
+            <p class="txt-degree">日落</p>
+          </li>
+          <li class="item">
+            <p class="txt-time">19:00</p>
+            <img src="./img/night/00.png" alt="晴" title="晴" class="icon" />
+            <p class="txt-degree">32°</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="container" style="margin-bottom: 35px">
+      <div id="ct-7-days">
+        <a id="link-15" href="http://www.weather.com.cn/weather15d/101120101.shtml" data-boss="swryb"
+          target="_blank">15日天气预报</a>
+        <h2 id="title">7日天气预报</h2>
+        <div id="ct-weather" class="box-content">
+          <ol id="ls-weather-day" class="ls-weather">
+            <li class="item first" style="width: 92px">
+              <p class="day">昨天</p>
+              <p class="date">08月18日</p>
+              <div class="ct-daytime">
+                <p class="weather">多云</p>
+                <img class="icon" src="./img/day/01.png" alt="多云" title="多云" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/01.png" alt="多云" title="多云" />
+                <p class="weather">多云</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+            <li class="item second" style="width: 92px">
+              <p class="day">今天</p>
+              <p class="date">08月19日</p>
+              <div class="ct-daytime">
+                <p class="weather">多云</p>
+                <img class="icon" src="./img/day/01.png" alt="多云" title="多云" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/01.png" alt="多云" title="多云" />
+                <p class="weather">多云</p>
+              </div>
+              <p class="wind">南风 3-4级</p>
+            </li>
+            <li class="item" style="width: 92px">
+              <p class="day">明天</p>
+              <p class="date">08月20日</p>
+              <div class="ct-daytime">
+                <p class="weather">晴</p>
+                <img class="icon" src="./img/day/02.png" alt="晴" title="晴" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/00.png" alt="晴" title="晴" />
+                <p class="weather">晴</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+            <li class="item" style="width: 92px">
+              <p class="day">后天</p>
+              <p class="date">08月21日</p>
+              <div class="ct-daytime">
+                <p class="weather">多云</p>
+                <img class="icon" src="./img/day/01.png" alt="多云" title="多云" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/01.png" alt="多云" title="多云" />
+                <p class="weather">多云</p>
+              </div>
+              <p class="wind">南风 3-4级</p>
+            </li>
+            <li class="item" style="width: 92px">
+              <p class="day">周五</p>
+              <p class="date">08月22日</p>
+              <div class="ct-daytime">
+                <p class="weather">多云</p>
+                <img class="icon" src="./img/day/01.png" alt="多云" title="多云" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/01.png" alt="多云" title="多云" />
+                <p class="weather">多云</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+            <li class="item" style="width: 92px">
+              <p class="day">周六</p>
+              <p class="date">08月23日</p>
+              <div class="ct-daytime">
+                <p class="weather">雷阵雨</p>
+                <img class="icon" src="./img/day/04.png" alt="雷阵雨" title="雷阵雨" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/04.png" alt="雷阵雨" title="雷阵雨" />
+                <p class="weather">雷阵雨</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+            <li class="item" style="width: 92px">
+              <p class="day">周日</p>
+              <p class="date">08月24日</p>
+              <div class="ct-daytime">
+                <p class="weather">雷阵雨</p>
+                <img class="icon" src="./img/day/04.png" alt="雷阵雨" title="雷阵雨" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/04.png" alt="雷阵雨" title="雷阵雨" />
+                <p class="weather">雷阵雨</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+            <li class="item last" style="width: 92px">
+              <p class="day">周一</p>
+              <p class="date">08月25日</p>
+              <div class="ct-daytime">
+                <p class="weather">雷阵雨</p>
+                <img class="icon" src="./img/day/04.png" alt="雷阵雨" title="雷阵雨" />
+              </div>
+              <div class="ct-night">
+                <img class="icon" src="./img/night/04.png" alt="雷阵雨" title="雷阵雨" />
+                <p class="weather">雷阵雨</p>
+              </div>
+              <p class="wind">微风 1-3级</p>
+            </li>
+          </ol>
+          <div id="chart-days" style="
+                -webkit-tap-highlight-color: transparent;
+                user-select: none;
+                background: rgba(0, 0, 0, 0);
+              " _echarts_instance_="ec_1755609534333">
+            <div style="
+                  position: relative;
+                  overflow: hidden;
+                  width: 740px;
+                  height: 174px;
+                  padding: 0px;
+                  margin: 0px;
+                  border-width: 0px;
+                ">
+              <canvas width="925" height="217" data-zr-dom-id="zr_0" style="
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 740px;
+                    height: 174px;
+                    user-select: none;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    padding: 0px;
+                    margin: 0px;
+                    border-width: 0px;
+                  "></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="ct-living-index">
+        <div class="ct-page-ctrl">
+          <a href="javascript:;" id="btn-prev" class="btn"></a>
+          <a href="javascript:;" id="btn-next" class="btn"></a>
+        </div>
+        <h2 id="title">生活指数</h2>
+        <div id="ct-pages">
+          <div id="ct-content">
+            <ul id="ls-living1" class="page">
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_chuanyi_hot"></i>
+                  <p class="content">穿衣&nbsp;炎热</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气炎热，建议着短衫、短裙、短裤、薄型T恤衫等清凉夏季服装。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_yusan"></i>
+                  <p class="content">雨伞&nbsp;不带伞</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气较好，不会降水，因此您可放心出门，无须带雨伞。
+                  </div>
+                </div>
+              </li>
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_ganmao"></i>
+                  <p class="content">感冒&nbsp;少发</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_xiche"></i>
+                  <p class="content">洗车&nbsp;适宜</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">适宜洗车，至少可维持3天</div>
+                </div>
+              </li>
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_yundong"></i>
+                  <p class="content">运动&nbsp;较适宜</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气较好，但因气温较高且风力较强，请适当降低运动强度并注意户外防风。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_fangsai"></i>
+                  <p class="content">防晒&nbsp;极强</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    紫外辐射极强，应特别加强防护，建议涂擦SPF20以上，PA++的防晒护肤品，并随时补涂。
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul id="ls-living2" class="page">
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_diaoyu"></i>
+                  <p class="content">钓鱼&nbsp;较适宜</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    较适合垂钓，但风力稍大，会对垂钓产生一定的影响。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_lvyou"></i>
+                  <p class="content">旅游&nbsp;适宜</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气较好，温度稍高，幸好风稍大，会缓解稍热的天气。适宜旅游，可不要错过机会呦！
+                  </div>
+                </div>
+              </li>
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_jiaotong"></i>
+                  <p class="content">交通&nbsp;良好</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气较好，路面干燥，交通气象条件良好，车辆可以正常行驶。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_wurankuosan"></i>
+                  <p class="content">空气污染扩散条件&nbsp;良</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    气象条件有利于空气污染物稀释、扩散和清除。
+                  </div>
+                </div>
+              </li>
+              <li class="item odd">
+                <div class="ct-sub">
+                  <i class="icon icon_shushidu"></i>
+                  <p class="content">舒适度&nbsp;较不舒适</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    白天天气多云，同时会感到有些热，不很舒适。
+                  </div>
+                </div>
+              </li>
+              <li class="item even">
+                <div class="ct-sub">
+                  <i class="icon icon_liangshai"></i>
+                  <p class="content">晾晒&nbsp;适宜</p>
+                </div>
+                <div class="ct-detail">
+                  <div class="detail">
+                    天气不错，适宜晾晒。赶紧把久未见阳光的衣物搬出来吸收一下太阳的味道吧！
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ct-footer">
+      <div id="ct-sponsors">
+        <a href="http://www.cma.gov.cn/" target="_blank"><img src="./img/1630660727718.png" /></a>
+        <a href="http://www.nmc.cn/" target="_blank"><img src="./img/1630660727966.png" /></a>
+        <a href="http://www.weather.com.cn/" target="_blank"><img src="./img/sponsor-zgtq.png" /></a>
+      </div>
+      <script>
+        var NavNoticeSiteName = [
+          "sports",
+          "tech",
+          "games",
+          "cul",
+          "edu",
+          "fashion",
+          "house",
+          "auto",
+          "finance",
+          "ent",
+        ];
+      </script>
+      <!--[if !IE]>|xGv00|160405494288ecc3516e240c185c4fd7<![endif]-->
+      <style>
+        .tcopyright {
+          width: 960px;
+          margin: 0 auto;
+          padding: 8px 0;
+          font-size: 12px;
+          line-height: 28px;
+          color: #333;
+          text-align: center;
+          overflow: hidden;
+          clear: both;
+        }
+
+        .tcopyright .en {
+          font-family: Arial;
+        }
+
+        .tcopyright a {
+          color: #333;
+          text-decoration: none;
+        }
+
+        .tcopyright a:hover {
+          color: #bd0a01;
+          text-decoration: underline;
+        }
+      </style>
+      <div id="tcopyright" class="tcopyright" bosszone="footer" role="contentinfo">
+        <div>
+          <a href="http://www.tencent.com/" target="_blank" rel="nofollow">关于腾讯</a>
+          |
+          <a href="http://www.tencent.com/index_e.shtml" target="_blank" rel="nofollow">About Tencent</a>
+          |
+          <a href="http://new.qq.com/static/contract.shtml" target="_blank" rel="nofollow">服务协议</a>
+          |
+          <a href="https://privacy.qq.com/mb/policy/tencent-privacypolicy" target="_blank" rel="nofollow">隐私政策</a>
+          |
+          <a href="http://open.qq.com/" target="_blank" rel="nofollow">开放平台</a>
+          |
+          <a href="http://www.tencentmind.com/" target="_blank" rel="nofollow">广告服务</a>
+          |
+          <a href="http://hr.tencent.com/" target="_blank" rel="nofollow">腾讯招聘</a>
+          |
+          <a href="http://gongyi.qq.com/" target="_blank" rel="nofollow">腾讯公益</a>
+        </div>
+        <div class="en">
+          Copyright © 1998 - 2025 Tencent. All Rights Reserved
+        </div>
+        <div>
+          <a href="http://www.tencent.com/" target="_blank" rel="nofollow">腾讯公司</a>
+          <a href="http://www.tencent.com/zh-cn/le/copyrightstatement.shtml" target="_blank" rel="nofollow">版权所有</a>
+        </div>
+      </div>
+      <!--[if !IE]>|xGv00|b6614ae390f3ba6a8cbcc269055b42da<![endif]-->
+    </div>
+  </div>
+  <!-- 引入pac_uid -->
+  <!-- 此js为业务入口文件 -->
+  <script src="./js/weather.js"></script>
+
+
+</body>
+
+</html>
